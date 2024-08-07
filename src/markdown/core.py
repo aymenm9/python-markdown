@@ -1,7 +1,7 @@
 import os
 
 
-def convert(markdown):
+def convert_to_html(markdown):
     """
     Convert Markdown to HTML
 
@@ -20,10 +20,18 @@ def convert(markdown):
         raise FileNotFoundError
 
     with open(markdown, 'r') as f:
+        html = ""
         for line in f:
-            print(line)
+            html = html + line
 
         
 
-    return markdown
+    return html
 
+def main():
+    markdown = "test.md"
+    html = convert_to_html(markdown)
+    print(html)
+
+if __name__ == "__main__":
+    main()

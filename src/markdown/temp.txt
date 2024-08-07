@@ -1,0 +1,108 @@
+Markdown Elements
+|
+|-- Headers
+|   |
+|   |-- Text Formatting
+|   |   |-- Bold
+|   |   |-- Italic
+|   |   |-- Strikethrough
+|   |   |-- Inline Code
+|   |   |-- Emojis
+|   |   |-- HTML Tags
+|   |
+|   |-- Links
+|
+|-- Blockquotes
+|   |
+|   |-- Headers
+|   |
+|   |-- Paragraphs
+|   |   |
+|   |   |-- Text Formatting
+|   |   |   |-- Bold
+|   |   |   |-- Italic
+|   |   |   |-- Strikethrough
+|   |   |   |-- Inline Code
+|   |   |   |-- Emojis
+|   |   |   |-- HTML Tags
+|   |   |
+|   |   |-- Links
+|   |   |-- Images
+|   |   |-- Line Breaks
+|   |
+|   |-- Lists
+|   |   |-- Unordered Lists
+|   |   |-- Ordered Lists
+|   |
+|   |-- Code Blocks
+|   |-- Horizontal Rules
+|   |-- Tables
+|
+|-- Lists
+|   |
+|   |-- List Items
+|       |
+|       |-- Headers
+|       |
+|       |-- Paragraphs
+|       |   |
+|       |   |-- Text Formatting
+|       |   |   |-- Bold
+|       |   |   |-- Italic
+|       |   |   |-- Strikethrough
+|       |   |   |-- Inline Code
+|       |   |   |-- Emojis
+|       |   |   |-- HTML Tags
+|       |   |
+|       |   |-- Links
+|       |   |-- Images
+|       |   |-- Line Breaks
+|       |
+|       |-- Blockquotes
+|       |
+|       |-- Nested Lists
+|       |   |-- Unordered Lists
+|       |   |-- Ordered Lists
+|       |
+|       |-- Code Blocks
+|       |-- Horizontal Rules
+|       |-- Tables
+|
+|-- Tables
+|   |
+|   |-- Table Cells
+|       |
+|       |-- Text Formatting
+|       |   |-- Bold
+|       |   |-- Italic
+|       |   |-- Strikethrough
+|       |   |-- Inline Code
+|       |   |-- Emojis
+|       |   |-- HTML Tags
+|       |
+|       |-- Links
+|       |-- Images
+|
+|-- Code Blocks
+|   |
+|   |-- Inline Code (highlighting specific lines or words)
+|
+|-- Horizontal Rules
+|
+|-- HTML Blocks
+|   |
+|   |-- Any HTML elements (text, images, lists, links, etc.)
+|
+|-- Paragraphs
+    |
+    |-- Text Formatting
+    |   |-- Bold
+    |   |-- Italic
+    |   |-- Strikethrough
+    |   |-- Inline Code
+    |   |-- Emojis
+    |   |-- HTML Tags
+    |
+    |-- Links
+    |-- Images
+    |-- Line Breaks

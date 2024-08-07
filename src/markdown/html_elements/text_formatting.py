@@ -11,14 +11,14 @@ import re
 '''
 class text_formatting_class:
     def __init__(self):
-        return self
+        pass
     
     def gen_text_formatting(self, match):
         
 
         return match.group(1)
     
-    def format(self, text: str) -> str:
+    def convert(self, text: str) -> str:
         '''
         text formatting
 
@@ -34,10 +34,14 @@ class text_formatting_class:
         
         
         '''
+
+        if len(text) == 0:
+            return ""
+
         # format all bold and italic befor bold cause bold [**(*str)**]* & same for other formats order is important
-        bold_and_italic = re.findall(r'\*\*\*(.*?)\*\*\*', text)
+        bold_and_italic = re.findall(r'(\*\*\*)(.*?)(\*\*\*)', text)
         for b in bold_and_italic:
-            text = text.replace(''.join(b), self.all_bold_and_italic(b[0]))
+            text = text.replace(''.join(b), self.all_bold_and_italic(b[1]))
 
         # format bold
         bold = re.findall(r'(\*\*|__)(.*?)(\*\*|__)', text)
@@ -51,22 +55,22 @@ class text_formatting_class:
         # format strikethrough
         strikethrough = re.findall(r'(~~)(.*?)(~~)', text)
         for s in strikethrough:
-            text = text.replace(''.join(s), self.strikethrough(s[0]))
+            text = text.replace(''.join(s), self.strikethrough(s[1]))
 
         # format bold and italic will be converted automatically in the bold and italic 
-
+        '''
         # format subscript
         sub = re.findall(r'(~)(.*?)(~)', text)
         
         for s in sub:
-            text = text.replace(''.join(s), self.subscript(s[0]))
+            text = text.replace(''.join(s), self.subscript(s[1]))
 
         # format superscript
         sup = re.findall(r'(\^)(.*?)(\^)', text)
 
         for s in sup:
-            text = text.replace(''.join(s), self.superscript(s[0]))
-
+            text = text.replace(''.join(s), self.superscript(s[1]))
+        '''
         return text
 
 

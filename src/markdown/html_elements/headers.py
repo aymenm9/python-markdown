@@ -1,5 +1,5 @@
 
-class headers:
+class headers_class:
     def __init__(self):
         pass
 
@@ -52,3 +52,5 @@ class headers:
             return line
 
         return self.h(level, text)
+    
+headers = headers_class()

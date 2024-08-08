@@ -26,13 +26,13 @@ def test_unordered_lists():
     # test unordered lists
     # markdown: - list
     # html: <ul><li>list</li></ul>
-    assert unordered_list.convert(('- list',)) == '<ul><li>list</li></ul>'
+    assert unordered_list.convert(['- list']) == '<ul><li>list</li></ul>'
 
     # test unordered lists
     # markdown: - list1
     #           * list2
     #           ['- list1', '* list2']
     # html: <ul><li>list1</li><li>list2</li></ul>
-    assert unordered_list.convert(('- list1', '* list2')) == '<ul><li>list1</li><li>list2</li></ul>'
+    assert unordered_list.convert(['- list1', '* list2']) == '<ul><li>list1</li><li>list2</li></ul>'
 
 

@@ -60,6 +60,8 @@ def generate_segments(file: str) -> Generator[dict, None, None]:
                     buffer[0].append(line)
                 else:
                     yield (paragraph , line.strip())
+        if buffer[1]:
+            yield (order_list if buffer[1] == 'ol' else unordered_list, buffer[0])
             
 def convert(file) -> str:
     html = ''

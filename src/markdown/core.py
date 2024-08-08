@@ -1,5 +1,5 @@
 import os
-from convert import convert
+from .convert import convert
 
 def convert_to_html(markdown):
     """

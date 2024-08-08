@@ -12,6 +12,7 @@ class lists_class(ABC):
         # tempalte pattern 
         out += self.open()
         for line in lines:
+            print(line)
             line = re.sub(r'([0-9]+\. *)|([\*\+-] *)','',line)
             out += '<li>' + line + '</li>'
         out += self.close(lines)

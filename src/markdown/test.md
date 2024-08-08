@@ -1,7 +1,11 @@
-# Git
+# HTML
 
-Git is a version control tool that can be used to keep track of versions of a software project.
+HTML is a markup language that can be used to define the structure of a web page. HTML elements include
 
-## GitHub
+* headings
+* paragraphs
+* lists
+* links
+* and more!
 
-GitHub is an online service for hosting git repositories.
+The most recent major version of HTML is HTML5.

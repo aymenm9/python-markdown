@@ -1,6 +1,6 @@
 # python-markdown
 
-    Recreation of python-markdown part of **CS50W Project:1**
+    Recreation of python-markdown part of **CS50W Project:1** for learning purposes
 
 ## functionality
 

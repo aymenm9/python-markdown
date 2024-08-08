@@ -1,6 +1,8 @@
 import re
 from typing import Generator
-from html_elements import *
+from .html_elements import *
+from .html_elements.lists import lists_class, order_list_class, unordered_list_class
+
 
 def generate_segments(file: str) -> Generator[dict, None, None]:
     """
@@ -28,6 +30,7 @@ def generate_segments(file: str) -> Generator[dict, None, None]:
     buffer = [list(),'']
     with open(file, 'r') as f:
         for line in f:
+            line = line.strip()
             if buffer[1] == 'ul':
                 if re.match(r'^[\*\+-] *', line):
                     buffer[0].append(line)
@@ -46,7 +49,6 @@ def generate_segments(file: str) -> Generator[dict, None, None]:
                     buffer[1] = ''
                     yield (order_list , lins)
 
-
             if buffer[1] == '':
                 if line.startswith('#'):
                     yield ( headers , line)
@@ -63,7 +65,12 @@ def convert(file) -> str:
     html = ''
 
     for converter , segment in generate_segments(file):
-        segment = text_formatting.convert(segment)
-        segment = links.convert(segment)
+        if isinstance(converter,(order_list_class,unordered_list_class)):
+            for i in range(len(segment)):
+                segment[i] = text_formatting.convert(segment[i])
+                segment[i] = links.convert(segment[i])
+        else:
+            segment = text_formatting.convert(segment)
+            segment = links.convert(segment)
         html += converter.convert(segment)
     return html

@@ -8,7 +8,7 @@ def convert_to_html(markdown):
     Parameters
     ----------
     markdown : str
-        The Markdown text to convert
+        The Markdown file path to convert
 
     Returns
     -------

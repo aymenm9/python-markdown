@@ -25,34 +25,45 @@ def generate_segments(file: str) -> Generator[dict, None, None]:
         
     """
 
+    buffer = [list(),'']
     with open(file, 'r') as f:
-        for line in file:
-            if line.startswith('#'):
-                yield { headers : line}
-            elif line.startswith('*'):
-                pass
+        for line in f:
+            if buffer[1] == 'ul':
+                if re.match(r'^[\*\+-] *', line):
+                    buffer[0].append(line)
+                else:
+                    lins = buffer[0]
+                    buffer[0] = list()
+                    buffer[1] = ''
+                    yield (unordered_list , lins)
+
+            elif buffer[1] == 'ol':
+                if re.match(r'^[0-9]+\. *', line):
+                    buffer[0].append(line)
+                else:
+                    lins = buffer[0]
+                    buffer[0] = list()
+                    buffer[1] = ''
+                    yield (order_list , lins)
+
+
+            if buffer[1] == '':
+                if line.startswith('#'):
+                    yield ( headers , line)
+                elif re.match(r'^[\*\+-] *', line):
+                    buffer[1] = 'ul'
+                    buffer[0].append(line)
+                elif re.match(r'^[0-9]+\. *', line):
+                    buffer[1] = 'ol'
+                    buffer[0].append(line)
+                else:
+                    yield (paragraph , line.strip())
             
+def convert(file) -> str:
+    html = ''
 
-
-
-
-def convert_headers(text: str) -> str:
-    """
-    Convert segments of Markdown to HTML
-
-    Parameters
-    ----------
-    text : str
-        The Markdown text to convert
-
-    Returns
-    -------
-    str
-        The converted HTML text
-    """
-
-
-    return ""
-
-
-
+    for converter , segment in generate_segments(file):
+        segment = text_formatting.convert(segment)
+        segment = links.convert(segment)
+        html += converter.convert(segment)
+    return html

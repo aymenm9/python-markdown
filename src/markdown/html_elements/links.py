@@ -5,7 +5,7 @@ class links_class:
 
     def __init__(self):
         pass
-    def convert(self, line):
+    def convert(self,line:str)->str:
 
         '''
         Convert line that contains links
@@ -23,10 +23,10 @@ class links_class:
 
         if len(line) == 0:
             return ""
-        # *******************0****1***2****3***4***5
-        like = re.findall(r'(\[)(.*?)(\])(\()(.*?)(\))' ,line)
+        
+        links = re.findall(r'(\[)(.*?)(\])(\()(.*?)(\))' ,line)
 
-        for l in like:
+        for l in links:
             line = line.replace(''.join(l), self.link(l[1],l[4]))
 
         return line

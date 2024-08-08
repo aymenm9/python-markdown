@@ -5,7 +5,7 @@ class lists_class(ABC):
     def __init__(self):
         pass
 
-    def convert(self, lines:tuple)->str:
+    def convert(self, lines:list)->str:
         if len(lines) == 0:
             return ""
         out = ""

@@ -1,7 +1,7 @@
-# header
+# Git
 
-line
+Git is a version control tool that can be used to keep track of versions of a software project.
 
-line 
+## GitHub
 
-## headr
+GitHub is an online service for hosting git repositories.

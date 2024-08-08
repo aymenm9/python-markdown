@@ -1,5 +1,5 @@
 import os
-
+from convert import convert
 
 def convert_to_html(markdown):
     """
@@ -19,12 +19,7 @@ def convert_to_html(markdown):
     if not os.path.isfile(markdown):
         raise FileNotFoundError
 
-    with open(markdown, 'r') as f:
-        html = ""
-        for line in f:
-            html = html + line
-
-        
+    html = convert(markdown)
 
     return html
 

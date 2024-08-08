@@ -44,4 +44,5 @@ def test_text_formatting():
     # HTML: str <strong>bold</strong> str <em>italic</em> str <del>strikethrough</del> str <sub>subscript</sub> str <sup>superscript</sup>
 
     assert text_formatting.convert('str **bold** str _italic_ str ~~strikethrough~~ str <sub>subscript</sub> str <sup>superscript</sup>') == 'str <strong>bold</strong> str <em>italic</em> str <del>strikethrough</del> str <sub>subscript</sub> str <sup>superscript</sup>'
+    assert text_formatting.convert('') == ''
 
